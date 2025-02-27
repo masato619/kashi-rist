@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKashiTable extends Migration
+class CreateLyricsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateKashiTable extends Migration
      */
     public function up()
     {
-        Schema::create('kashi', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('lyrics', function (Blueprint $table) {
+            $table->string('title');
+            $table->string('artist');
+            $table->text('lyrics');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateKashiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kashi');
+        Schema::dropIfExists('lyrics');
     }
 }
